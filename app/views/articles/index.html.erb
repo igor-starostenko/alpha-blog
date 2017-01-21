@@ -1,0 +1,27 @@
+<body align="middle">
+<h1>Showing All Articles from the DataBase</h1>
+
+<Table align="center">
+  <tr>
+    <th> ID </th>
+    <th> Title </th>
+    <th> Description </th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td> <%= article.id %> </td>
+    <td> <%= article.title %> </td>
+    <td> <%= article.description %> </td>
+    <td> <%= link_to 'Show', article_path(article.id) %> </td>
+    <td> <%= link_to 'Edit', edit_article_path(article.id) %> </td>
+  </tr>
+<% end %>
+</Table>
+
+<br>
+<p> <%= link_to 'Create New Article', new_article_path %> </p>
+<p> <%= link_to 'Back to Home Page', root_path %> </p>
+</body>

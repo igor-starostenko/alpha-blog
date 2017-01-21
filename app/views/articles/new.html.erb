@@ -1,3 +1,4 @@
+<body align="middle">
 <h1>Create New Article</h1>
 
 <% if @article.errors.any? %>
@@ -22,3 +23,5 @@
       <%= f.submit %>
     </p>
 <% end %>
+<p> <%= link_to 'Cancel', articles_path %> </p>
+</body>
