@@ -79,12 +79,25 @@ body {
   font-weight: bold;
 }
 
-footer {
-  margin-top: 45px;
+.show {
+  font-size: 1.2em;
+  min-height: 120px;
+}
+
+.article-actions {
   padding-top: 5px;
+  float: left;
+}
+
+.border {
   border-top: 1px;
   border-top-style: solid;
   border-top-color: #eaeaea;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
   color: #777;
 }
 
