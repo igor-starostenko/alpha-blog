@@ -1,7 +1,6 @@
-<body align="middle">
 <h1>Showing All Articles from the DataBase</h1>
 
-<Table align="center">
+<Table>
   <tr>
     <th> ID </th>
     <th> Title </th>
@@ -15,7 +14,7 @@
     <td> <%= article.description %> </td>
     <td> <%= link_to 'Show', article_path(article.id) %> </td>
     <td> <%= link_to 'Edit', edit_article_path(article.id) %> </td>
-    <td> <%= link_to 'Delete', article_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td> <%= link_to 'Delete', article_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
   </tr>
 <% end %>
 </Table>
@@ -23,4 +22,3 @@
 <br>
 <p> <%= link_to 'Create New Article', new_article_path %> </p>
 <p> <%= link_to 'Back to Home Page', root_path %> </p>
-</body>
