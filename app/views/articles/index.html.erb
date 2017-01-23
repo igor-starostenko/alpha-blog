@@ -1,24 +1,19 @@
-<h1>Showing All Articles from the DataBase</h1>
-
-<Table>
-  <tr>
-    <th> ID </th>
-    <th> Title </th>
-    <th> Description </th>
-  </tr>
-
-  <% @articles.each do |article| %>
-      <tr>
-        <td> <%= article.id %> </td>
-        <td> <%= article.title %> </td>
-        <td> <%= article.description %> </td>
-        <td> <%= link_to 'Show', article_path(article.id) %> </td>
-        <td> <%= link_to 'Edit', edit_article_path(article.id) %> </td>
-        <td> <%= link_to 'Delete', article_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-      </tr>
-  <% end %>
-</Table>
-
-<br>
-<p> <%= link_to 'Create New Article', new_article_path %> </p>
-<p> <%= link_to 'Back to Home Page', root_path %> </p>
+<h1 class='center'>Showing All Articles from the DataBase</h1>
+<% @articles.each do |article| %>
+    <div class='row'>
+      <div class='well well-sm col-xs-8 col-xs-offset-2'>
+        <div class='article-title'>
+          <%= article.id %>
+          <%= link_to article.title, article_path(article.id) %>
+          <div class='show-actions'>
+            <%= link_to 'Edit', edit_article_path(article.id), class: 'btn btn-xs btn-primary' %>
+            <%= link_to 'Delete', article_path(article.id), method: :delete,
+                      data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+          </div>
+        </div>
+        <div class='article-body border'>
+          <%= truncate(article.description, length: 100) %>
+        </div>
+      </div>
+    </div>
+<% end %>
