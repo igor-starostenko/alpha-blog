@@ -12,7 +12,9 @@
           </div>
         </div>
         <div class='article-body border'>
-          <%= truncate(article.description, length: 100) %>
+          <%= truncate(article.description, length: 300) %>
+          <small class='show_signature'>By <%= article.user.username %>
+            ( <%= time_ago_in_words(article.created_at) %> ago ) </small>
         </div>
       </div>
     </div>
