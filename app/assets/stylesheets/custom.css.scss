@@ -9,35 +9,13 @@ body {
   line-height: 2rem;
   font-size: 1.3rem;
   background-color: white;
-  //background-color: blanchedalmond;
-  //margin: 0;
-  //padding: 0;
-  //color: #000;
-  //text-align: center;
 }
-
-//h1 {
-//  font-weight: normal;
-//  line-height: 2.8rem;
-//  font-size: 2.5rem;
-//  letter-spacing: -1px;
-//  color: black;
-//}
-
-//p { font-family: monospace; }
 
 .container {
   width: 960px;
   margin: 0 auto 40px;
   overflow: hidden;
 }
-
-//section {
-//  margin: 0 auto 2rem;
-//  padding: 1rem 0 0;
-//  width: 700px;
-//  text-align: center;
-//}
 
 #brand {
   float: left;
@@ -77,6 +55,12 @@ body {
   line-height: normal;
   margin-top: 250px;
   font-weight: bold;
+}
+
+.sign_up_form {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
 .show {
