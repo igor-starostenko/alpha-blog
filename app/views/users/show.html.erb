@@ -1,0 +1,13 @@
+<h1 class='center'> Welcome to <%= @user.username %>'s page! </h1>
+<div class='row'>
+  <div class='center col-xs-8 col-xs-offset-2' id='avatar'>
+    <%= gravatar_for @user, size: 120 %>
+  </div>
+</div>
+<% if @user.articles.size.zero? %>
+    <br>
+    <div class='well col-xs-6 col-xs-offset-3'>
+      <h5 class='center'> You don't have any articles created yet. </h5>
+    </div>
+<% end %>
+<%= render 'articles/list', obj: @user.articles %>
