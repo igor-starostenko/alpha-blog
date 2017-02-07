@@ -79,6 +79,17 @@ body {
 .listing {
   list-style: none;
   margin-left: 0px;
+  width: 100%;
+  height: 100%;
+  //height: 600px;
+}
+
+.grid-cell {
+  width: 20%;
+  height: 30%;
+  display: inline-table;
+  //float: left;
+  padding: 20px;
 }
 
 .article-title {
