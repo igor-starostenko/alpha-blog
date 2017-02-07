@@ -2,7 +2,6 @@
     <div class='row'>
       <div class='well well-sm col-xs-8 col-xs-offset-2'>
         <div class='article-title'>
-          <%= article.id %>
           <%= link_to article.title, article_path(article.id) %>
           <div class='show-actions'>
             <%= link_to 'Edit', edit_article_path(article.id), class: 'btn btn-xs btn-primary' %>
