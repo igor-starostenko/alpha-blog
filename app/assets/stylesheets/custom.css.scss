@@ -26,9 +26,19 @@ body {
   color: sienna;
 }
 
+.navbar-collapse {
+  padding-right: 5px;
+}
+
 #nav-link {
   font-size: 1.3em;
   color: sienna;
+}
+
+#avatar-nav {
+  //padding: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
 }
 
 .center {
