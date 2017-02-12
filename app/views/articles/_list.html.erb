@@ -4,9 +4,13 @@
         <div class='article-title'>
           <%= link_to article.title, article_path(article.id) %>
           <div class='show-actions'>
-            <%= link_to 'Edit', edit_article_path(article.id), class: 'btn btn-xs btn-primary' %>
-            <%= link_to 'Delete', article_path(article.id), method: :delete,
-                        data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+            <% if current_user == article.user %>
+                <%= link_to 'Edit', edit_article_path(article.id), class: 'btn btn-xs btn-warning' %>
+                <%= link_to 'Delete', article_path(article.id), method: :delete,
+                            data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+            <% elsif request.path == articles_path %>
+                <%= link_to gravatar_for(article.user, size: 25), user_path(article.user) %>
+            <% end %>
           </div>
         </div>
         <div class='article-body border'>

@@ -6,8 +6,14 @@
 </div>
 <% if @user.articles.size.zero? %>
     <br>
-    <div class='well col-xs-6 col-xs-offset-3'>
-      <h5 class='center'> You don't have any articles created yet. </h5>
+    <div class='well center col-xs-4 col-xs-offset-4'>
+      <% if current_user == @user %>
+          <h5>You don't have any articles created yet.</h5>
+          <h5>Get started by hitting the button below!</h5>
+          <%= link_to 'Create Article', new_article_path, class: 'btn btn-primary btn-xlarge' %>
+      <% else %>
+          <h5>This user doesn't have any articles yet.</h5>
+      <% end %>
     </div>
 <% end %>
 <%= render 'articles/list', obj: @user_articles %>
