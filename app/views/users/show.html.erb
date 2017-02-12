@@ -1,0 +1,20 @@
+<h1 class='center'> Welcome to <%= @user.username %>'s page! </h1>
+<div class='row'>
+  <div class='center col-xs-8 col-xs-offset-2' id='avatar'>
+    <%= gravatar_for @user, size: 120 %>
+  </div>
+</div>
+<% if @user.articles.size.zero? %>
+    <br>
+    <div class='well center col-xs-4 col-xs-offset-4'>
+      <% if current_user == @user %>
+          <h5>You don't have any articles created yet.</h5>
+          <h5>Get started by hitting the button below!</h5>
+          <%= link_to 'Create Article', new_article_path, class: 'btn btn-primary btn-xlarge' %>
+      <% else %>
+          <h5>This user doesn't have any articles yet.</h5>
+      <% end %>
+    </div>
+<% end %>
+<%= render 'articles/list', obj: @user_articles %>
+<div class='center'><%= will_paginate @user_articles %></div>

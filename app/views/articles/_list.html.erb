@@ -1,0 +1,23 @@
+<% obj.each do |article| %>
+    <div class='row'>
+      <div class='well well-sm col-xs-8 col-xs-offset-2'>
+        <div class='article-title'>
+          <%= link_to article.title, article_path(article.id) %>
+          <div class='show-actions'>
+            <% if current_user == article.user %>
+                <%= link_to 'Edit', edit_article_path(article.id), class: 'btn btn-xs btn-warning' %>
+                <%= link_to 'Delete', article_path(article.id), method: :delete,
+                            data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+            <% elsif request.path == articles_path %>
+                <%= link_to gravatar_for(article.user, size: 25), user_path(article.user) %>
+            <% end %>
+          </div>
+        </div>
+        <div class='article-body border'>
+          <%= truncate(article.description, length: 300) %>
+          <small class='show_signature'>By <%= article.user.username %>
+            ( <%= time_ago_in_words(article.created_at) %> ago ) </small>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -9,35 +9,13 @@ body {
   line-height: 2rem;
   font-size: 1.3rem;
   background-color: white;
-  //background-color: blanchedalmond;
-  //margin: 0;
-  //padding: 0;
-  //color: #000;
-  //text-align: center;
 }
-
-//h1 {
-//  font-weight: normal;
-//  line-height: 2.8rem;
-//  font-size: 2.5rem;
-//  letter-spacing: -1px;
-//  color: black;
-//}
-
-//p { font-family: monospace; }
 
 .container {
   width: 960px;
   margin: 0 auto 40px;
   overflow: hidden;
 }
-
-//section {
-//  margin: 0 auto 2rem;
-//  padding: 1rem 0 0;
-//  width: 700px;
-//  text-align: center;
-//}
 
 #brand {
   float: left;
@@ -48,9 +26,19 @@ body {
   color: sienna;
 }
 
+.navbar-collapse {
+  padding-right: 5px;
+}
+
 #nav-link {
   font-size: 1.3em;
   color: sienna;
+}
+
+#avatar-nav {
+  //padding: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
 }
 
 .center {
@@ -61,11 +49,12 @@ body {
   background-image: asset-url('Rails.png');
   background-size: cover;
   height: 550px;
+  //min-height: 150px;
 }
 
 .jumbotron h1 {
   color: sienna;
-  margin-bottom: 30px;
+  margin-bottom: 250px;
   letter-spacing: -1px;
   font-weight: bold;
   text-transform: uppercase;
@@ -75,8 +64,19 @@ body {
   font-size: 1.7em;
   font-family: Damascus;
   line-height: normal;
-  margin-top: 250px;
+  //margin-bottom: 10px;
+  //margin-top: 250px;
   font-weight: bold;
+}
+
+.sign_up_form {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+#avatar {
+  margin-bottom: 15px
 }
 
 .show {
@@ -88,6 +88,22 @@ body {
   float: right;
 }
 
+.listing {
+  list-style: none;
+  margin-left: 0px;
+  width: 100%;
+  height: 100%;
+  //height: 600px;
+}
+
+.grid-cell {
+  width: 20%;
+  height: 30%;
+  display: inline-table;
+  //float: left;
+  padding: 20px;
+}
+
 .article-title {
   font-weight: bold;
   font-size: 1.5em;
@@ -96,6 +112,13 @@ body {
 
 .article-body {
   padding-top: 10px;
+}
+
+.show_signature {
+  line-height: 1.5;
+  font-style: italic;
+  color: #777;
+  float: right;
 }
 
 .article-actions {
@@ -110,7 +133,7 @@ body {
 }
 
 footer {
-  margin-top: 45px;
+  margin-top: 30px;
   padding-top: 5px;
   color: #777;
 }

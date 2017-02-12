@@ -3,10 +3,14 @@
   <!--<h4><strong>Description</strong></h4>-->
   <!--<hr>-->
   <%= simple_format(@article.description, class: 'show') %>
+  <small class='show_signature border'>By <%= @article.user.username %>
+    <br><%= time_ago_in_words(@article.created_at) %> ago</small>
   <div class='article-actions border'>
-    <%= link_to 'Edit', edit_article_path, class: 'btn btn-xs btn-primary' %>
-    <%= link_to 'Delete', article_path, method: :delete,
-                data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
-    <%= link_to 'Show All', articles_path, class: 'btn btn-xs btn-success' %>
+    <% if current_user == @article.user %>
+        <%= link_to 'Edit', edit_article_path, class: 'btn btn-xs btn-warning' %>
+        <%= link_to 'Delete', article_path, method: :delete,
+                    data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+        <%= link_to 'Back', :back , class: 'btn btn-xs btn-primary' %>
+    <% end %>
   </div>
 </div>

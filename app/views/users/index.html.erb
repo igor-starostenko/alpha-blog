@@ -1,0 +1,12 @@
+<h1 class='center'>Showing All Users from the DataBase</h1>
+<div class='center'><%= will_paginate %></div>
+<ul class='listing center'>
+  <% @users.each do |user| %>
+      <div class='grid-cell'>
+        <li><%= link_to gravatar_for(user, size: 120), user_path(user) %></li>
+        <br>
+        <li class='article-title'><%= link_to user.username, user_path(user) %></li>
+        <li><small><%= pluralize(user.articles.count, 'article') if user.articles %></small></li>
+      </div>
+  <% end %>
+</ul>
