@@ -4,6 +4,14 @@
     <%= gravatar_for @user, size: 120 %>
   </div>
 </div>
+<% if current_user.admin? %>
+    <div class='center'>
+      <%= link_to 'Delete this user', user_path(@user), method: :delete,
+                  data: { confirm: 'Are you sure that you want to permanently delete this user?' },
+                  class: 'btn btn-xs btn-danger' %>
+    </div>
+    <br>
+<% end %>
 <% if @user.articles.size.zero? %>
     <br>
     <div class='well center col-xs-4 col-xs-offset-4'>
