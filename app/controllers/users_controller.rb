@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :show]
+  before_action :require_admin, only: [:index, :destroy]
 
   def index
+    # Executes before_action :require_admin
     # @users = User.all
     @users = User.paginate(page: params[:page], per_page: 8)
   end
@@ -40,7 +42,16 @@ class UsersController < ApplicationController
 
   def show
     # Executes before_action :set_user
+    # Executes before_action :require_same_user
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
+  end
+
+  def destroy
+    # Executes before_action :set_user
+    # Executes before_action :require_same_user
+    @user.destroy
+    flash[:danger] = 'User and all articles created by the user have been deleted!'
+    redirect_to users_path
   end
 
   private
@@ -54,6 +65,10 @@ class UsersController < ApplicationController
 
   def require_same_user
     return if current_user == @user
+    not_authorized
+  end
+
+  def require_admin
     not_authorized
   end
 end

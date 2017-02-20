@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def not_authorized
+    return if logged_in? && current_user.admin?
     flash[:danger] = 'You are not authorized to perform this action'
     redirect_to root_path
   end

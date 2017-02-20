@@ -5,6 +5,7 @@ $navbar-default-bg: blanchedalmond;
 @import "bootstrap";
 
 body {
+  overflow-x: hidden;
   font-family: Georgia, sans-serif;
   line-height: 2rem;
   font-size: 1.3rem;
@@ -26,9 +27,9 @@ body {
   color: sienna;
 }
 
-.navbar-collapse {
-  padding-right: 5px;
-}
+//.navbar-collapse {
+//  padding-right: 5px;
+//}
 
 #nav-link {
   font-size: 1.3em;

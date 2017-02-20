@@ -6,7 +6,7 @@
   <small class='show_signature border'>By <%= @article.user.username %>
     <br><%= time_ago_in_words(@article.created_at) %> ago</small>
   <div class='article-actions border'>
-    <% if current_user == @article.user %>
+    <% if logged_in? && (current_user == @article.user || current_user.admin?)  %>
         <%= link_to 'Edit', edit_article_path, class: 'btn btn-xs btn-warning' %>
         <%= link_to 'Delete', article_path, method: :delete,
                     data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
