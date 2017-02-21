@@ -3,10 +3,9 @@ require 'test_helper'
 class ArticleTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(username: 'test_user',
+    @user = User.create(username: 'test_user',
                      email: 'test@email.com',
                      password: 'password')
-    @user.save
     @user_id = User.all.last.id
     @article = Article.new(title: 'Title',
                            description: 'Test Description',
