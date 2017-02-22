@@ -1,0 +1,21 @@
+<h1 class='center'>List of Categories from the DataBase</h1>
+<div class='center'><%= will_paginate %></div>
+<div align='center'>
+  <div class='category-create'>
+    <%= link_to 'Create New Category', new_category_path, class: 'btn btn-primary btn-xlarge' %>
+  </div>
+  <% @categories.each do |category| %>
+      <div class="row">
+        <div class='well well-sm col-sm-4 col-xs-offset-3'>
+          <div class='category-title'>
+            <%= category.name %>
+          </div>
+        </div>
+        <div class='category-actions'>
+          <%= link_to 'Edit', edit_category_path(category.id), class: 'btn btn-warning' %>
+          <%= link_to 'Delete', category_path(category.id), method: :delete,
+                      data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+  <% end %>
+</div>

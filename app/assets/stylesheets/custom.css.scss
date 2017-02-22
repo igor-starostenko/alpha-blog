@@ -27,10 +27,6 @@ body {
   color: sienna;
 }
 
-//.navbar-collapse {
-//  padding-right: 5px;
-//}
-
 #nav-link {
   font-size: 1.3em;
   color: sienna;
@@ -44,6 +40,10 @@ body {
 
 .center {
   text-align: center;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .jumbotron {
@@ -87,6 +87,22 @@ body {
 
 .show-actions {
   float: right;
+}
+
+.category-create {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.category-title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.category-actions {
+  padding-left: 5px;
+  float: left;
+  line-height: 40px;
 }
 
 .listing {

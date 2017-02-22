@@ -33,14 +33,15 @@
               <a id='avatar-nav' data-toggle="dropdown"><%= gravatar_for(current_user, size: 45) %></a>
               <ul class="dropdown-menu">
                 <% if current_user.admin? %>
-                    <li><%= link_to 'Show All Users', users_path %></li>
+                    <li class='align-right'><%= link_to 'Show All Users', users_path %></li>
+                    <li class='align-right'><%= link_to 'Categories', categories_path %></li>
                     <li role="separator" class="divider"></li>
                 <% end %>
-                <li><%= link_to 'View My Articles', user_path(current_user) %></li>
-                <li><%= link_to 'Create New Article', new_article_path %></li>
+                <li class='align-right'><%= link_to 'View My Articles', user_path(current_user) %></li>
+                <li class='align-right'><%= link_to 'Create New Article', new_article_path %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to 'Edit My Profile', edit_user_path(current_user) %></li>
-                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+                <li class='align-right'><%= link_to 'Edit My Profile', edit_user_path(current_user) %></li>
+                <li class='align-right'><%= link_to 'Log Out', logout_path, method: :delete %></li>
               </ul>
             </li>
         <% else %>
