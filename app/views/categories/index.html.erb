@@ -1,9 +1,11 @@
 <h1 class='center'>List of Categories from the DataBase</h1>
-<br>
+<% if @categories.total_entries <= 8 %>
+    <br>
+<% end %>
 <div class='center'><%= will_paginate %></div>
 <div align='center'>
   <% @categories.each do |category| %>
-      <div class="row center">
+      <div class="row">
         <div class='well well-sm col-sm-3 col-xs-offset-4'>
           <div class='category-title'>
             <%= category.name %>
@@ -16,5 +18,8 @@
         </div>
       </div>
   <% end %>
+</div>
+<div class='row'>
   <%= link_to 'New Category', new_category_path, class: 'btn col-sm-3 col-xs-offset-4 btn-primary btn-xlarge' %>
 </div>
+<div class='center'><%= will_paginate %></div>
