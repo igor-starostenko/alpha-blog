@@ -5,9 +5,11 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
   def setup
     @category = Category.create(name: 'Books')
     @category2 = Category.create(name: 'Programming')
+    @user = User.create(username: 'admin', email: 'admin@test.com', password: 'password', admin: true)
   end
 
   test 'should show categories listing' do
+    sign_in_as(@user.email, 'password')
     get categories_path
     assert_template 'categories/index'
     assert_select 'div', text: @category.name
@@ -15,18 +17,21 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show "Edit" link next to a category' do
+    sign_in_as(@user.email, 'password')
     get categories_path
     assert_select 'a[href=?]', edit_category_path(@category.id), text: 'Edit'
     assert_select 'a[href=?]', edit_category_path(@category2.id), text: 'Edit'
   end
 
   test 'should show "Delete" link next to a category' do
+    sign_in_as(@user.email, 'password')
     get categories_path
     assert_select 'a[href=?]', category_path(@category.id), text: 'Delete', method: :delete
     assert_select 'a[href=?]', category_path(@category2.id), text: 'Delete', method: :delete
   end
 
   test 'should have a link to create new category' do
+    sign_in_as(@user.email, 'password')
     get categories_path
     assert_select 'a[href=?]', new_category_path, text: 'New Category'
   end

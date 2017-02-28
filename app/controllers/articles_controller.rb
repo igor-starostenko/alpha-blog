@@ -60,6 +60,6 @@ class ArticlesController < ApplicationController
 
   def require_same_user
     return if current_user == @article.user
-    not_authorized
+    require_admin
   end
 end
