@@ -1,4 +1,12 @@
 <h2 class='col-xs-offset-2'><%= @category.name %></h2>
-<!--<div class='center'><%= will_paginate @category_articles %></div>-->
+<% if @category_articles.size.zero? %>
+    <br>
+    <div class='well center col-xs-8 col-xs-offset-2'>
+      <h5>There are no articles associated with this category.</h5>
+      <h5>Get started by hitting the button below!</h5>
+      <%= link_to 'Create Article', new_article_path, class: 'btn btn-primary btn-xlarge' %>
+    </div>
+<% end %>
+<div class='center'><%= will_paginate @category_articles %></div>
 <%= render 'articles/list', obj: @category_articles %>
-<!--<div class='center'><%= will_paginate @category_articles %></div>-->
+<div class='center'><%= will_paginate @category_articles %></div>
