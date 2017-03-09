@@ -14,9 +14,16 @@
           </div>
         </div>
         <div class='article-body border'>
-          <%= truncate(article.description, length: 300) %>
+          <p> <%= truncate(article.description, length: 300) %>
+            <% if article.categories.any? %>
+              <div class='categories float-left'>
+                <%= 'Category'.pluralize(article.categories.size) + ':' %>
+                <%= render article.categories[0..3] %>
+              </div>
+          <% end %>
           <small class='show_signature'>By <%= article.user.username %>
             ( <%= time_ago_in_words(article.created_at) %> ago ) </small>
+          </p>
         </div>
       </div>
     </div>

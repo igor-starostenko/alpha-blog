@@ -89,6 +89,21 @@ body {
   float: right;
 }
 
+.input_checkbox input {
+  width: auto !important;
+}
+
+.badge {
+  background-color: lightcyan;
+  text-transform: uppercase;
+  letter-spacing: -1;
+}
+
+.row+.categories {
+  margin-top: -15px;
+  padding-left: 0px;
+}
+
 .category-title {
   font-weight: bold;
   font-size: 1.3em;
@@ -126,6 +141,10 @@ body {
   padding-top: 10px;
 }
 
+.article-body p {
+  margin-bottom: 0px;
+}
+
 .show_signature {
   line-height: 1.5;
   font-style: italic;
@@ -144,14 +163,14 @@ body {
   border-top-color: #eaeaea;
 }
 
+.float-left {
+  float: left;
+}
+
 footer {
   margin-top: 30px;
   padding-top: 5px;
   color: #777;
-}
-
-footer small {
-  float: left;
 }
 
 footer ul {
