@@ -65,10 +65,6 @@ class UsersController < ApplicationController
 
   def require_same_user
     return if current_user == @user
-    not_authorized
-  end
-
-  def require_admin
-    not_authorized
+    require_admin
   end
 end
